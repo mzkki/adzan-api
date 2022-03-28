@@ -9,6 +9,7 @@ function prayerTimes(latitude, logitude){
         let app = document.getElementById('app');
         let table = document.createElement('table');
         let tableTbody = document.createElement('tbody');
+
         for(i in data){
             let row = tableTbody.insertRow();
             let name = row.insertCell(0);
@@ -27,7 +28,8 @@ function success(position){
 }
 
 function error(){
-    alert('Unable to retrieve your location');
+    alert('you denied the request for location, the default location is Balikpapan/Indonesia');
+    prayerTimes('-1.265386', '116.831200');
 }
 
 function userLocation(){
